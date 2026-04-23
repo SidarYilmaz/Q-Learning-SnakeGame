@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/arkaplan">
+
+    <!-- ÜST BAR -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="5dp"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/scoreText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Skor: 0"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:shadowColor="#000000"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="5"/>
+
+        <Button
+            android:id="@+id/btnToggleAI"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="İNSAN"
+            android:textSize="10sp"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#2979FF"
+            app:cornerRadius="8dp"
+            android:layout_marginEnd="10dp"/>
+
+        <Button
+            android:id="@+id/btnPause"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/btn_pause_wood"
+            app:backgroundTint="@null"
+            android:stateListAnimator="@null"/>
+    </LinearLayout>
+
+    <!-- OYUN EKRANI -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="10dp"
+        android:layout_marginBottom="10dp"
+        app:cardBackgroundColor="#00000000">
+
+        <com.example.q_learning_snakegame.SnakeGameView
+            android:id="@+id/gameView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </androidx.cardview.widget.CardView>
+
+
+    <!-- KONTROLLER -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="bottom"
+        android:layout_marginBottom="10dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <Button
+                android:id="@+id/btnUp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/btn_up"
+                app:backgroundTint="@null"
+                android:stateListAnimator="@null"
+                android:layout_marginBottom="5dp"/>
+
+            <Button
+                android:id="@+id/btnDown"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/btn_down"
+                app:backgroundTint="@null"
+                android:stateListAnimator="@null"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="bottom">
+
+            <Button
+                android:id="@+id/btnLeft"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/btn_left"
+                app:backgroundTint="@null"
+                android:stateListAnimator="@null"
+                android:layout_marginEnd="10dp"/>
+
+            <Button
+                android:id="@+id/btnRight"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/btn_right"
+                android:stateListAnimator="@null"
+                app:backgroundTint="@null"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
